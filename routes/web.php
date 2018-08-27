@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/master', function () {
-    return view('content/index');
+    return view('content/dasboard');
 });
 

@@ -58,5 +58,5 @@
 <script src="/js/plugin/chart-circle/circles.min.js"></script>
 <script src="/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="/js/ready.min.js"></script>
-<script src="/js/demo.js"></script>
+{{-- <script src="/js/demo.js"></script> --}}
 </html>
