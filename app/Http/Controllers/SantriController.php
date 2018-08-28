@@ -22,9 +22,9 @@ class SantriController extends Controller
         //        ->take(10)
         //        ->get();
 
-        $santris = DB::table('santris')
+        $santris = DB::table('santri')
                 ->orderBy('id', 'desc')
-                ->paginate(3);
+                ->paginate(5);
 
         return view('santri.index', ['santris' => $santris]);
     }
@@ -47,7 +47,7 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        $a = DB::table('santris')->insert([
+        $a = DB::table('santri')->insert([
             'name' => $request->name,
             'address' => $request->address,
             'status' => $request->status,
