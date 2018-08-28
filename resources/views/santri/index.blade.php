@@ -22,8 +22,8 @@
                     <tbody>
                         <tr>
                             <td>{{ $santri->id }}</td>
-                            <td>{{ $santri->nama }}</td>
-                            <td>{{ $santri->alamat }}</td>
+                            <td>{{ $santri->name }}</td>
+                            <td>{{ $santri->address }}</td>
                             <td>{{ $santri->status }}</td>
                         </tr>
                     </tbody>

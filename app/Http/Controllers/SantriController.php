@@ -36,7 +36,7 @@ class SantriController extends Controller
      */
     public function create()
     {
-        //
+        return view('santri.create');
     }
 
     /**
@@ -47,7 +47,14 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $a = DB::table('santris')->insert([
+            'name' => $request->name,
+            'address' => $request->address,
+            'status' => $request->status,
+        ]);
+
+        return redirect('/santri');
+
     }
 
     /**
