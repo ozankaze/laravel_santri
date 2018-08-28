@@ -37,7 +37,7 @@
         </div>
         <ul class="nav">
             <li class="nav-item active">
-                <a href="index.html">
+                <a href="/santri">
                     <i class="la la-user"></i>
                     <p>Santri QODR</p>
                     {{-- <span class="badge badge-count">5</span> --}}

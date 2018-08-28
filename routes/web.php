@@ -15,7 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/master', function () {
-    return view('content/dasboard');
-});
-
+Route::get('/santri', 'SantriController@index');
