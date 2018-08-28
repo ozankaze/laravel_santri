@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Santri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SantriController extends Controller
 {
@@ -14,7 +15,16 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $santris = Santri::all();
+        // $santris = Santri::paginate(2);
+
+        // $santris = Santri::where('id', 1)
+        //        ->orderBy('nama', 'desc')
+        //        ->take(10)
+        //        ->get();
+
+        $santris = DB::table('santris')
+                ->orderBy('id', 'desc')
+                ->paginate(3);
 
         return view('santri.index', ['santris' => $santris]);
     }

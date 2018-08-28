@@ -29,6 +29,9 @@
                     </tbody>
                 @endforeach
             </table>
+            <li class="pagination">
+                {{ $santris->links() }}
+            </li>
         </div>
     </div>
 @endsection
