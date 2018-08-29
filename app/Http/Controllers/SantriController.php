@@ -111,5 +111,7 @@ class SantriController extends Controller
     public function destroy(Santri $santri)
     {
         $santri->delete();
+
+        return redirect('/santri');
     }
 }

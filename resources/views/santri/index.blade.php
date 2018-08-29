@@ -18,6 +18,7 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Alamat</th>
                             <th scope="col">Status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     @foreach ($santris as $santri)
@@ -27,6 +28,14 @@
                                 <td>{{ $santri->name }}</td>
                                 <td>{{ $santri->address }}</td>
                                 <td>{{ $santri->status }}</td>
+                                <td>
+                                    <form action="/santri/{{ $santri->id }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="delete">
+                                        <input class="btn btn-danger" type="submit" name="submit" value="Dreate">
+                                        <a class="btn btn-primary" href="/santri/{{ $santri->id }}/edit">Edit</a>
+                                    </form>
+                                </td>
                             </tr>
                         </tbody>
                     @endforeach

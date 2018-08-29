@@ -22,3 +22,5 @@ Route::post('/santri', 'SantriController@store');
 
 Route::get('/santri/{santri}/edit', 'SantriController@edit');
 Route::put('/santri/{santri}', 'SantriController@update');
+
+Route::delete('/santri/{santri}', 'SantriController@destroy');
