@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Santri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\ModelFoundException;
 
 class SantriController extends Controller
 {
@@ -47,7 +48,7 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        $a = DB::table('santri')->insert([
+        DB::table('santri')->insert([
             'name' => $request->name,
             'address' => $request->address,
             'status' => $request->status,
@@ -76,7 +77,8 @@ class SantriController extends Controller
      */
     public function edit(Santri $santri)
     {
-        //
+        // dd('kesii');
+        return view('santri.edit', ['santri' => $santri]);
     }
 
     /**
@@ -88,7 +90,16 @@ class SantriController extends Controller
      */
     public function update(Request $request, Santri $santri)
     {
-        //
+        // dd($santri->id);        
+
+        $santri->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'status' => $request->status
+        ]);
+
+        return redirect('/santri');
+        
     }
 
     /**
@@ -99,6 +110,6 @@ class SantriController extends Controller
      */
     public function destroy(Santri $santri)
     {
-        //
+        $santri->delete();
     }
 }

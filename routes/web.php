@@ -19,3 +19,6 @@ Route::get('/santri', 'SantriController@index');
 
 Route::get('/santri/create', 'SantriController@create');
 Route::post('/santri', 'SantriController@store');
+
+Route::get('/santri/{santri}/edit', 'SantriController@edit');
+Route::put('/santri/{santri}', 'SantriController@update');
